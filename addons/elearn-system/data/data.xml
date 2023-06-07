@@ -1,0 +1,11 @@
+
+<odoo>
+    <data noupdate="1">
+        <record id="subject_1" model="elearn.subjects">
+            <field name="name">ფიზიკა</field>
+        </record>
+        <record id="subject_2" model="elearn.subjects">
+            <field name="name">მათემატიკა</field>
+        </record>
+    </data>
+</odoo>

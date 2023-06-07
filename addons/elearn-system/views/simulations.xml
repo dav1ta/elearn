@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+
+<record id="view_simulation_form" model="ir.ui.view">
+    <field name="name">elearn.simulation.form</field>
+    <field name="model">elearn.simulation</field>
+    <field name="arch" type="xml">
+        <form string="Simulation">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="html"/>
+                    <field name="course_id"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+  </record>
+
+
+
+<record id="view_simulation_tree" model="ir.ui.view">
+    <field name="name">elearn.simulation.tree</field>
+    <field name="model">elearn.simulation</field>
+    <field name="arch" type="xml">
+        <tree string="Simulation">
+            <field name="name"/>
+            <field name="html_url"/>
+            <field name="course_id"/>
+
+            </tree>
+    </field>
+  </record>
+
+
+<record id="action_simulation" model="ir.actions.act_window">
+    <field name="name">Simulation</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">elearn.simulation</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="view_simulation_tree"/>
+</record>
+
+
+<menuitem id="menu_simulation" name="სიმულაციები" action="action_simulation"/>
+
+
+    </data>
+</odoo>

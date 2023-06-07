@@ -1,0 +1,71 @@
+<odoo>
+  <data>
+
+  <record id="action_course_form" model="ir.actions.act_window">
+        <field name="name">სემესტრები</field>
+        <field name="res_model">elearn.course</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+
+ <record id="action_lessons" model="ir.actions.act_window">
+        <field name="name">გაკვეთილები</field>
+        <field name="res_model">elearn.lesson</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Subjects -->
+    <record id="action_subjects" model="ir.actions.act_window">
+        <field name="name">საგნები</field>
+        <field name="res_model">elearn.subjects</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Schools -->
+    <record id="action_schools" model="ir.actions.act_window">
+        <field name="name">სკოლები</field>
+        <field name="res_model">elearn.school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Teachers -->
+    <record id="action_teachers" model="ir.actions.act_window">
+        <field name="name">მასწავლებლები</field>
+        <field name="res_model">elearn.teacher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Students -->
+    <record id="action_students" model="ir.actions.act_window">
+        <field name="name">მოსწავლეები</field>
+        <field name="res_model">elearn.student</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+
+
+<record id="action_open_current_lesson" model="ir.actions.server">
+    <field name="name">გაკვეთილი</field>
+
+    <field name="type">ir.actions.server</field>
+    <field name="model_id" ref="model_elearn_lesson"/>
+    <field name="state">code</field>
+    <field name="code">
+       action =  env['elearn.lesson'].open_current_lesson()</field>
+</record>
+
+
+
+
+
+ <menuitem id="main_elearn_menu" name="E-სწავლება" sequence="10"/>
+  <menuitem id="elearn_menu_courses" name="სემესტრები" parent="main_elearn_menu" action="action_course_form"  />
+  <menuitem id="elearn_menu_lessons" name="სასწავლო მასალები" parent="main_elearn_menu" action="action_lessons"  />
+    <menuitem id="menu_elearn_subjects" name="საგნები" parent="main_elearn_menu" action="action_subjects" />
+    <menuitem id="menu_elearn_schools" name="სკოლები" parent="main_elearn_menu" action="action_schools" />
+    <menuitem id="menu_elearn_teachers" name="მასწავლებლები" parent="main_elearn_menu" action="action_teachers" />
+    <menuitem id="menu_elearn_students" name="მოსწავლეები" parent="main_elearn_menu" action="action_students"  />
+    <menuitem id="menu_lesson" name="მიმდინარე გაკვეთილი" action="action_open_current_lesson" groups="group_pupil"/>
+  </data>
+</odoo>

@@ -1,0 +1,44 @@
+<odoo>
+<data>
+<record id="view_lesson_form" model="ir.ui.view">
+        <field name="name">elearn.lesson.form</field>
+        <field name="model">elearn.lesson</field>
+        <field name="arch" type="xml">
+            <form string="სასწავლო მასალები">
+                <group>
+                  <field name="course_id" string='სემესტრი' />
+                        <field name="content" widget='html' />
+                        <field name="survey"/>
+                        <field name="date"/>
+                        <field name="attachment_ids"/>
+                      </group>
+            </form>
+        </field>
+    </record>
+
+
+<record id="view_lesson_form_student" model="ir.ui.view">
+        <field name="name">elearn.lesson.form</field>
+        <field name="model">elearn.lesson</field>
+        <field name="arch" type="xml">
+            <form string="Lesson Form">
+                        <field name="content" widget='html'  readonly="1" />
+                          <button type='object' name='open_survey'>ტესტი</button>
+            </form>
+        </field>
+    </record>
+
+    <!-- List views -->
+
+    <record id="view_lesson_tree" model="ir.ui.view">
+        <field name="name">elearn.lesson.tree</field>
+        <field name="model">elearn.lesson</field>
+        <field name="arch" type="xml">
+          <tree>
+                <field name="name"/>
+                <field name="course_id"/>
+                </tree>
+        </field>
+    </record>
+  </data>
+</odoo>

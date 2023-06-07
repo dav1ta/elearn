@@ -1,0 +1,36 @@
+
+<odoo>
+  <data>
+  <record id="view_user_badges_kanban" model="ir.ui.view">
+        <field name="name">user.badge.kanban</field>
+        <field name="model">gamification.badge.user</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card">
+                            <field name="badge_id" />
+                            <div class="oe_kanban_content">
+                                <img t-att-src="record.badge_id.raw_value.image" class="oe_kanban_image"/>
+                                <strong><t t-esc="record.badge_id.raw_value.name" /></strong>
+                                <p><t t-esc="record.comment.raw_value"/></p>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_user_badges" model="ir.actions.act_window">
+        <field name="name">დამსახურებები</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gamification.badge.user</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('user_id','=',uid)]</field>
+    </record>
+ <menuitem id="menu_user_badges" name="ჩემი დამსახურებები" action="action_user_badges"/>
+
+
+  </data>
+</odoo>

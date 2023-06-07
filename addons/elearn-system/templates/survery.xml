@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="elearn_survey_start_page" inherit_id="survey.survey_start_page">
+        <xpath expr="//div[@id='wrap']" position="before">
+            <div class="elearn-banner">
+                <h1>Welcome to Our eLearning Platform!</h1>
+                <p>Start your learning journey by taking a quiz.</p>
+                <p>addd to manifesttttt </p>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+

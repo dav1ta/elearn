@@ -1,0 +1,146 @@
+<odoo>
+  <data>
+<record id="view_subjects_form" model="ir.ui.view">
+        <field name="name">elearn.subjects.form</field>
+        <field name="model">elearn.subjects</field>
+        <field name="arch" type="xml">
+            <form string="Subject Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_subjects_tree" model="ir.ui.view">
+        <field name="name">elearn.subjects.tree</field>
+        <field name="model">elearn.subjects</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Schools -->
+    <record id="view_school_form" model="ir.ui.view">
+        <field name="name">elearn.school.form</field>
+        <field name="model">elearn.school</field>
+        <field name="arch" type="xml">
+            <form string="School Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_tree" model="ir.ui.view">
+        <field name="name">elearn.school.tree</field>
+        <field name="model">elearn.school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Teachers -->
+    <record id="view_teacher_form" model="ir.ui.view">
+        <field name="name">elearn.teacher.form</field>
+        <field name="model">elearn.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Teacher Form">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="subject_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_teacher_tree" model="ir.ui.view">
+        <field name="name">elearn.teacher.tree</field>
+        <field name="model">elearn.teacher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="subject_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Students -->
+    <record id="view_student_form" model="ir.ui.view">
+        <field name="name">elearn.student.form</field>
+        <field name="model">elearn.student</field>
+        <field name="arch" type="xml">
+            <form string="Student Form">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="school_id"/>
+                        <field name="course_ids"/>
+                      </group>
+
+                      <group>
+
+                        <field name="grade"/>
+                        <field name="grade_letter"/>
+                    </group>>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_tree" model="ir.ui.view">
+        <field name="name">elearn.student.tree</field>
+        <field name="model">elearn.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="school_id"/>
+            </tree>
+        </field>
+      </record>
+
+
+
+    <!-- <record id="view_student_kanban" model="ir.ui.view"> -->
+    <!--     <field name="name">elearn.student.kanban</field> -->
+    <!--     <field name="model">elearn.student</field> -->
+    <!--     <field name="arch" type="xml"> -->
+    <!--         <kanban class="o_kanban_view"> -->
+    <!--             <templates> -->
+    <!--                 <t t-name="kanban-box"> -->
+    <!--                     <div t-attf-class="oe_kanban_global_click oe_kanban_card"> -->
+    <!--                         <div class="o_kanban_record_top mb16"> -->
+    <!--                             <field name="partner_id"/> -->
+    <!--                             <img t-att-src="'data:image/png;base64,'+record.partner_id.raw_value.image_1920" class="oe_kanban_avatar" /> -->
+    <!--                         </div> -->
+    <!--                         <div class="o_kanban_record_bottom"> -->
+    <!--                             <div class="oe_kanban_bottom_left"> -->
+    <!--                                 <field name="grade"/> -->
+    <!--                                 <field name="grade_letter"/> -->
+    <!--                             </div> -->
+    <!--                             <div class="oe_kanban_bottom_right"> -->
+    <!--                                 <field name="school_id"/> -->
+    <!--                                 <field name="course_ids"/> -->
+    <!--                             </div> -->
+    <!--                         </div> -->
+    <!--                     </div> -->
+    <!--                 </t> -->
+    <!--             </templates> -->
+    <!--         </kanban> -->
+    <!--     </field> -->
+    <!-- </record> -->
+
+
+        </data>
+  </odoo>
