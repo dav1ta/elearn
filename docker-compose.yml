@@ -2,7 +2,7 @@ version: '3.1'
 services:
   web:
     image: odoo:16.0
-    command: -- -u elearn-system
+    command: -- -u apartments
     stdin_open: true
     tty: true
     depends_on:

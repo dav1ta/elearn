@@ -1,0 +1,104 @@
+<odoo>
+  <data>
+
+
+<record id="view_real_estate_apartment_tree" model="ir.ui.view">
+    <field name="name">real.estate.apartment.tree</field>
+    <field name="model">real.estate.apartment</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="square_meter"/>
+            <field name="location"/>
+            <field name="price"/>
+            <field name="rooms"/>
+            <field name="available"/>
+            <field name="possible_clients"/>
+        </tree>
+    </field>
+</record>
+
+
+
+<record id="action_real_estate_apartment" model="ir.actions.act_window">
+    <field name="name">Apartments</field>
+    <field name="res_model">real.estate.apartment</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+<record id="view_real_estate_client_tree" model="ir.ui.view">
+    <field name="name">real.estate.client.tree</field>
+    <field name="model">real.estate.client</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="phone"/>
+            <field name="possible_apartments"/>
+        </tree>
+    </field>
+</record>
+
+
+<record id="view_real_estate_preffered_tree" model="ir.ui.view">
+    <field name="name">real.estate.client.tree</field>
+    <field name="model">real.estate.preferredapartment</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="square_preference"/>
+            <field name="location_tags" widget='may2many_tags'/>
+        </tree>
+    </field>
+</record>
+
+<!-- <record id="view_real_estate_client_form" model="ir.ui.view"> -->
+<!--     <field name="name">real.estate.client.form</field> -->
+<!--     <field name="model">real.estate.client</field> -->
+<!--     <field name="arch" type="xml"> -->
+<!--         <form> -->
+<!--         </form> -->
+<!--     </field> -->
+<!-- </record> -->
+
+<record id="action_real_estate_client" model="ir.actions.act_window">
+    <field name="name">Clients</field>
+    <field name="res_model">real.estate.client</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+
+<!-- views/import_from_myhome_views.xml -->
+
+<!-- Wizard Form View -->
+<record id="view_import_from_myhome_wizard_form" model="ir.ui.view">
+    <field name="name">import.from.myhome.form</field>
+    <field name="model">import.from.myhome</field>
+    <field name="arch" type="xml">
+        <form string="Import Apartments from MyHome">
+            <group>
+                <field name="create_uid" invisible="1"/>
+                <footer>
+                    <button string="Import" type="object" name='import_apartments' class="btn-primary" />
+                </footer>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+<!-- Wizard Action -->
+<record id="action_import_from_myhome_wizard" model="ir.actions.act_window">
+    <field name="name">Import Apartments</field>
+    <field name="res_model">import.from.myhome</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_import_from_myhome_wizard_form"/>
+    <field name="target">new</field>
+</record>
+
+<menuitem id="menu_real_estate" name="Real Estate" sequence="10"/>
+<menuitem id="menu_real_estate_apartment" name="Apartments" action="action_real_estate_apartment" parent="menu_real_estate"/>
+<menuitem id="menu_real_estate_client" name="Clients" action="action_real_estate_client" parent="menu_real_estate"/>
+<menuitem id="menu_import_from_myhome" name="Import Apartments from MyHome" parent="menu_real_estate" action="action_import_from_myhome_wizard"/>
+  </data>
+</odoo>
